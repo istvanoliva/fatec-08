@@ -26,3 +26,16 @@ BEGIN
     temp_fahrenheit := temp_celsius * 9 / 5 + 32;
     RAISE NOTICE 'Temperatura: %°C = %°F', temp_celsius, temp_fahrenheit;
 END $$;
+
+-- Exercício 1.4
+
+DO $$
+DECLARE
+    a NUMERIC(5, 2) := random() * 9 + 1;
+    b NUMERIC(5, 2) := random() * 9 + 1;
+    c NUMERIC(5, 2) := random() * 9 + 1;
+    delta NUMERIC(5, 2);
+BEGIN
+    delta := b * b - 4 * a * c;
+    RAISE NOTICE 'Valores: a = %, b = %, c = %. Delta = %', a, b, c, delta;
+END $$;
