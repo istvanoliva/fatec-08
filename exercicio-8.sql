@@ -52,3 +52,18 @@ BEGIN
     sucessor := sqrt(numero + 1);
     RAISE NOTICE 'Número: %, Raiz cúbica do antecessor: %, Raiz quadrada do sucessor: %', numero, antecessor, sucessor;
 END $$;
+
+-- Exercício 1.6
+
+DO $$
+DECLARE
+    largura NUMERIC(5, 2) := random() * 9 + 1;
+    comprimento NUMERIC(5, 2) := random() * 9 + 1;
+    preco_m2 NUMERIC(5, 2) := random() * 10 + 60;
+    area NUMERIC(5, 2);
+    valor_total NUMERIC(5, 2);
+BEGIN
+    area := largura * comprimento;
+    valor_total := area * preco_m2;
+    RAISE NOTICE 'Largura: %, Comprimento: %, Área: %, Preço/m²: %, Valor total: %', largura, comprimento, area, preco_m2, valor_total;
+END $$;
