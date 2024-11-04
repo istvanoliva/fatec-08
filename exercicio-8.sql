@@ -39,3 +39,16 @@ BEGIN
     delta := b * b - 4 * a * c;
     RAISE NOTICE 'Valores: a = %, b = %, c = %. Delta = %', a, b, c, delta;
 END $$;
+
+-- Exercício 1.5
+
+DO $$
+DECLARE
+    numero INTEGER := floor(random() * 100 + 1)::int;
+    antecessor NUMERIC(5, 2);
+    sucessor NUMERIC(5, 2);
+BEGIN
+    antecessor := power(numero - 1, 1.0 / 3);
+    sucessor := sqrt(numero + 1);
+    RAISE NOTICE 'Número: %, Raiz cúbica do antecessor: %, Raiz quadrada do sucessor: %', numero, antecessor, sucessor;
+END $$;
