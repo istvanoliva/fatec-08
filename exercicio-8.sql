@@ -67,3 +67,15 @@ BEGIN
     valor_total := area * preco_m2;
     RAISE NOTICE 'Largura: %, Comprimento: %, Área: %, Preço/m²: %, Valor total: %', largura, comprimento, area, preco_m2, valor_total;
 END $$;
+
+-- Exercício 1.7
+
+DO $$
+DECLARE
+    ano_nascimento INTEGER := floor(random() * 21 + 1980)::int;
+    ano_atual INTEGER := floor(random() * 11 + 2010)::int;
+    idade INTEGER;
+BEGIN
+    idade := ano_atual - ano_nascimento;
+    RAISE NOTICE 'Ano de nascimento: %, Ano atual: %, Idade: %', ano_nascimento, ano_atual, idade;
+END $$;
